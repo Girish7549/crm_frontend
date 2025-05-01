@@ -1,0 +1,190 @@
+.timeline-container {
+  position: relative;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem 0;
+}
+
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  background-color: #e0e0e0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1.5px;
+}
+
+.timeline-item {
+  padding: 1rem 2rem;
+  position: relative;
+  width: 50%;
+  transition: transform 0.2s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-2px);
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #ff6f61;
+  border: 2px solid white;
+  top: 1rem;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-item.left::after {
+  right: -6px;
+}
+
+.timeline-item.right::after {
+  left: -6px;
+}
+
+/* Backgrounds alternate here */
+.timeline-content {
+  background: var(--bg-color, #fdfdfd);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.timeline-content.alt-1 {
+  background-color: #f0f9ff; /* light blue */
+}
+
+.timeline-content.alt-2 {
+  background-color: #fff7ed; /* soft peach */
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  color: #ff6f61;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.note-date {
+  color: #777;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Connect line (hidden by default) */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  width: 0;
+  height: 2px;
+  background-color: #ff6f61;
+  transition: width 0.4s ease-in;
+  z-index: 0;
+}
+
+/* Left side line direction */
+.timeline-item.left::before {
+  right: 12px;
+}
+
+/* Right side line direction */
+.timeline-item.right::before {
+  left: 12px;
+}
+
+/* On hover, show line */
+.timeline-item:hover::before {
+  width: calc(100% - 48px); /* adjust based on padding and dot size */
+}
+
+/* Invoice Template CSS */
+.invoice-container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 32px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.invoice-logo {
+  height: 100px;
+}
+.invoice-status {
+  padding: 6px 12px;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  display: inline-block;
+}
+.info-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0;
+}
+.info-box {
+  width: 48%;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+th {
+  background: #f5f5f5;
+}
+.tag {
+  padding: 4px 8px;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 12px;
+  background-color: #f5222d;
+}
+.tag.paid {
+  background-color: #52c41a;
+}
+.total-box {
+  text-align: right;
+  margin-top: 24px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.download-btn {
+  text-align: right;
+  margin: 16px auto;
+  max-width: 900px;
+}
+.download-btn button {
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #1677ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
